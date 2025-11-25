@@ -1,0 +1,44 @@
+/* Archivo global de fuentes - Incluir en todos los HTML */
+
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: url('Gotham-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: url('GOTHAM-BOLD.TTF') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham-Ultra';
+    src: url('Gotham-Ultra.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham-UltraItalic';
+    src: url('Gotham-UltraItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Anton';
+    src: url('Anton-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mettars';
+    src: url('Mettars.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+

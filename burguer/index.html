@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Antes de Pedir</title>
+	<link rel="stylesheet" href="/paginaprincipal/fonts/font.css">
+	<link rel="stylesheet" href="index.css">
+
+	<script language="javascript">
+		function validarFormulario() {
+			var txtNombre = document.getElementById("nombre").value;
+			var txtCelular = document.getElementById("celular").value;
+			var chkEstado = document.getElementById("check");
+			var rbtEstado = document.getElementsByName('radio');
+			var txtEdad = document.getElementById("edad").value;
+
+			if (isNaN(txtCelular) || txtCelular == "" || txtCelular.length < 10) {
+				alert('El celular ingresado no es correcto');
+				document.consulta.celular.focus();
+				return false;
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<img class="logo" src="imgs/Carita Blanca.png" alt="">
+			<img class="logo" src="imgs/logo.png">
+		</nav>
+		
+		<br>
+		<br>
+
+		<h1>Antes de Pedir...</h1>
+	</header>
+
+
+	<!-- DATOS DEL CLIENTE -->
+	<section class="seccion-cliente">
+        <h2 class="titulo-form">Datos del Cliente</h2>
+        <div class="container-form">
+            <form class="form-pos" name="consulta" method="GET" action="envio.php" onSubmit="return validarFormulario()"
+                enctype="multipart/form-data">
+
+                <div class="campos-texto">
+                    <label for="nombre">Nombre y Apellido:</label>
+                    <input type="text" id="nombre"><br>
+
+                    <label for="domicilio">Domicilio:</label>
+                    <input type="text" id="domicilio" placeholder="Dirección 000"><br>
+
+                    <label for="celular">Teléfono:</label>
+                    <input id="celular" type="text" required placeholder="3580000000" maxlength="10"> <br>
+                </div>
+                
+                <div class="opciones-entrega">
+                    <label class="radio-label"><input type="radio" name="envio" value="retirar"> Retirar</label>
+                    <label class="radio-label"><input type="radio" name="envio" value="domicilio"> Domicilio</label>
+                </div>
+                
+                </form>
+
+        </div>
+    </section>
+<!-- Re Captcha 
+				<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+				<div class="g-recaptcha" data-sitekey="6LcDOfwUAAAAAMeoLYzg8Mhw5ah6OGHHeqJOO2eT"></div><br>
+				-->
+	<!-- BURGER SECTION -->
+	<section class="burger-section">
+		
+		<h2 class="title-burguer">Burger</h2>
+			
+	
+		<div class="burger-container">
+			<img src="imgs/Burger.jpg" class="burger-img" alt="Hamburguesa">
+			<div class="burger-price">$6000</div>
+			<img class="bg_lineas" src="imgs/Recuros lineas verde.png" alt="">
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="tipo-burger">
+			<button>Carne</button>
+			<button>Pollo</button>
+			<button>Vegan</button>
+		</div>
+	</section>
+
+	<!-- TOPPINS -->
+	<section >
+		<div class=" grid-12">
+
+			<div class="col-5 colour tit">
+				<h2>Toppins</h2>
+			<span class="titulo-superpuesto">Extras</span>
+				
+			</div>
+			<div class="col-2">
+				<h3>$400 c/u</h3>
+			</div>
+			<div class="col-5">
+				<img class="lineas-costado" src="imgs/Recuros lineas verde.png" alt="">
+				 
+			</div>
+		</div>
+
+		<form>
+			<div class="container-general-toppings">
+				<div class="container">
+					<label><input type="checkbox"> Cheddar Extra</label><br>
+					<label><input type="checkbox"> Bacon Crocante</label><br>
+					<label><input type="checkbox"> Cebolla Crispy</label><br>
+					<label><input type="checkbox"> Pepinillos</label><br>
+				</div>
+				<div class="container">
+					<label><input type="checkbox"> Guacamole</label><br>
+					<label><input type="checkbox"> Huevo</label><br>
+					<label><input type="checkbox"> Jalapeños</label><br>
+					<label><input type="checkbox"> Papitas</label>
+				</div>
+			</div>
+		</form>
+	</section>
+
+
+	<!-- GUARNICIONES EXCLUSIVAS -->
+	<section>
+		<div class="grid-12">
+			<div class="col-5 colour tit">
+				<h2 class="titulo-seccion">Guarniciones</h2>
+				<span class="titulo-superpuesto">Extras</span>
+			</div>
+			<div class="col-2">
+				<!-- vacio -->
+			</div>
+			<div class="col-5">
+				<!-- vacío -->
+			</div>
+		</div>
+
+		<div class="container-guarniciones">
+			<ul>
+				<label><input type="checkbox"> Papas clásicas $2200</label><br>
+				<label><input type="checkbox"> Papas con cheddar y bacon $3500</label><br>
+				<label><input type="checkbox"> Pechuguitas de pollo fritas $3500</label><br>
+				
+			</ul>
+		</div>
+	</section>
+
+	<!-- BEBIDAS -->
+	<section>
+		<div class="grid-12">
+			<div class="col-5 colour">
+				<h2>Bebidas</h2>
+			</div>
+			<div class="col-2">
+				<!-- vacio -->
+			</div>
+			<div class="col-5">
+				<!-- vacío -->
+			</div>
+		</div>
+
+		<form>
+
+			<br>
+			<br>
+
+			<div class="container-item-bebidas">
+				<label><input type="checkbox"> Sin bebida</label>
+			</div>
+
+			<div class="container-general-bebidas">
+				<div class="container-bebidas">
+					<h3>CERVEZAS</h3>
+					<label><input type="checkbox"> Heineken $2000</label><br>
+					<label><input type="checkbox"> Heineken $2000</label><br>
+					<label><input type="checkbox"> Heineken $2000</label><br>
+					<label><input type="checkbox"> Heineken $2000</label><br>
+					<label><input type="checkbox"> Patagonia $2300</label><br>
+				</div>
+				<div class="container-bebidas">
+					<h3>GASEOSAS</h3>
+					<label><input type="checkbox"> Coca Cola $1800</label><br>
+					<label><input type="checkbox"> Sprite $1800</label><br>
+
+					<h3>AGUAS</h3>
+					<label><input type="checkbox"> Eco de los Andes $1200</label>
+				</div>
+			</div>
+		</form>
+	</section>
+
+
+	<footer>
+		<!-- COMENTARIOS / PEDIDO EXTRA -->
+		<section>
+			<h2>Te antoja algo más</h2>
+			<div class="container-comments">
+				<div>
+					<button>[imagen]</button>
+					<button>[imagen]</button>
+					<button>[imagen]</button>
+				</div>
+			</div>
+		</section>
+	</footer>
+
+</body>
+
+</html>

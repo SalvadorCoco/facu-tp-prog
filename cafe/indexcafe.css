@@ -1,0 +1,218 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #000;
+}
+
+.logo{
+    width: 70px;
+}
+
+.top-bar {
+    background-color: #00c37c;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.main-title {
+    color: #00c37c;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.datos-cliente {
+    padding: 20px;
+    text-align: center;
+}
+
+.datos-cliente h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.datos-cliente form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.ensaladas {
+    padding: 20px;
+    text-align: center;
+}
+
+.ensaladas h2 {
+    color: #00c37c;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.descripcion {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.grid-2 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* espacio entre los cuadros */
+    margin-top: 15px;
+}
+
+.card {
+    text-align: center;
+}
+
+.img-placeholder {
+    width: 140px;
+    height: 140px;
+    background-color: #000;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+
+.tentate {
+    padding: 20px;
+    text-align: center;
+}
+
+.tentate h2 {
+    color: #00c37c;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botones button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #00c37c;
+    cursor: pointer;
+}
+
+/* seccion formulario */
+.container-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Secciones, le agrega una linea que separa */
+section {
+    padding: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* Títulos de sección */
+section h2 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formularios */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Contenedor centrado */
+.container-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo del formulario */
+.form-pos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 30px;
+}
+
+/* Cada fila del formulario (label + input alineados) */
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ancho fijo para los labels para alinear todo */
+.form-row label {
+    width: 100px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Inputs */
+.form-row input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 200px;
+}
+
+/* Grupo de radio buttons */
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* para los titulos superpuestos */
+.titulo-doble {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.titulo-verde {
+    font-size: 32px;
+    color: #00c37c;
+    margin: 0;
+}
+
+.titulo-negro {
+    position: absolute;
+    top: 80%;
+    left: 92%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    color: #000;
+    font-family: 'mettars';
+    pointer-events: none; /* para que no tape el texto verde */
+}
+
+.prd{
+    object-fit: cover;
+    width: 140px;
+    border-radius: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
