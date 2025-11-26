@@ -1,204 +1,298 @@
-/* --- Fuentes --- */
-@font-face {
-    font-family: 'mettars';
-    src: url(/paginaprincipal/fonts/Mettars.otf);
-}
-@font-face {
-    font-family: 'Gotham-Medium';
-    src: url(/paginaprincipal/fonts/Gotham-Medium.otf);
-}
-@font-face {
-    font-family: 'Gotham-Ultra';
-    src: url(/paginaprincipal/fonts/Gotham-UltraItalic.otf);
-}
-
-/* ================= VARIABLES ================= */
-:root {
-    --verde-brillante: #00d084; /* Verde brillante (ej: precio, botones, logos en nav) */
-    --verde-oscuro-fondo: #002717; /* Un verde muy oscuro, casi negro, para el fondo principal */
-    --verde-barra: #009e66; /* El verde usado en las barras de título */
-    --blanco: #fff;
-    --negro: #000;
-    --gris-borde: #333333; 
-}
-
-/* ================= RESET & BASE ================= */
+/* ------------------------------------
+/* 1. Reset Básico y Estilos Generales
+/* ------------------------------------ */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Gotham-Medium", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Gotham-Medium", sans-serif;
+  color: #fff; /* Color de texto por defecto (usado en fondos oscuros) */
+}
+
+/* Tipografía y Colores Definidos */
+:root {
+  --color-fondo-principal: #02bb70; /* ¡Actualizado! El color verde brillante (#02bb70) ahora es el fondo del body */
+  --color-acento-texto: #000; /* Negro para texto en fondos claros */
+  --color-gris-claro: #d1b1a7;
 }
 
 body {
-    background-color: var(--verde-oscuro-fondo); /* FONDO: Verde Oscuro */
-    color: var(--blanco); /* Texto principal blanco */
-    width: 100%;
-    max-width: 500px; /* Limita el ancho del cuerpo para centrar la estructura del diseño. */
-    margin: 0 auto;
-    overflow-x: hidden;
-}
-
-/* ================= NAV Y HEADER ================= */
-header {
-    text-align: center;
-    background-color: var(--verde-oscuro-fondo); /* Fondo del header igual al body */
-    padding-bottom: 20px;
-}
-
-nav {
-    background-color: var(--verde-brillante); /* Barra de navegación verde brillante */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  background-color: var(--color-fondo-principal);
+  min-height: 100vh;
 }
 
 h1 {
-    color: var(--verde-brillante);
-    font-family: "Gotham-Ultra", sans-serif;
-    text-transform: uppercase;
-    font-size: 32px;
-    margin-top: 15px;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--color-acento-texto);
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* ================= SECCIÓN FORMULARIO (FONDO BLANCO) ================= */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Gotham-Bold", sans-serif;
+}
 
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Gotham-Bold", sans-serif;
+  color: #fff; /* Por defecto blanco, cambiará en el formulario */
+}
+
+label,
+input[type="text"] {
+  font-family: "Gotham-Medium", sans-serif;
+  color: #fff; /* Por defecto blanco */
+}
+
+/* ------------------------------------
+/* 2. Header y Navegación
+/* ------------------------------------ */
+header {
+  background-color: #fff; /* Fondo del header blanco */
+  padding-bottom: 1rem;
+  color: var(--color-acento-texto);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 0;
+  background-color: var(--color-fondo-principal); /* La banda verde superior */
+}
+
+.logo {
+  height: 40px;
+}
+
+/* ------------------------------------
+/* 3. Sección de Datos del Cliente (Fondo Blanco)
+/* ------------------------------------ */
 .seccion-cliente {
-    background-color: var(--blanco); /* FONDO BLANCO para el formulario */
-    color: var(--negro); /* Texto negro en fondo blanco */
-    border-bottom: 2px solid var(--verde-brillante); /* Separador verde */
-    padding-bottom: 10px;
+  background-color: #fff; /* ¡Actualizado! Fondo del formulario blanco */
+  padding: 1rem 20px;
 }
 
 .titulo-form {
-    color: var(--negro); 
-    font-size: 24px;
+  color: var(--color-acento-texto);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: "Gotham-Bold", sans-serif;
+  text-align: center;
 }
 
-/* Etiquetas y Campos de Texto (Negro en fondo blanco) */
+.campos-texto {
+  /* Ajuste para que los labels y inputs usen texto negro */
+  color: var(--color-acento-texto);
+}
+
 .campos-texto label {
-    color: var(--negro);
-    font-weight: 800;
+  color: var(--color-acento-texto);
 }
 
 .campos-texto input[type="text"] {
-    background-color: #eee;
-    border: 1px solid var(--negro);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: var(--color-acento-texto);
 }
 
-.opciones-entrega .radio-label {
-    color: var(--negro);
-    font-weight: 800;
+.opciones-entrega label {
+  color: var(--color-acento-texto);
 }
 
-/* Radio Button Cuadrado Negro */
-.opciones-entrega input[type="radio"] {
-    border: 1px solid var(--negro);
-    background-color: var(--blanco);
-}
-
-.opciones-entrega input[type="radio"]:checked {
-    background-color: var(--negro); 
-}
-
-
-/* ================= SECCIÓN BURGER ================= */
+/* ------------------------------------
+/* 4. Sección de la Burger Principal (Fondo Principal Verde)
+/* ------------------------------------ */
 .burger-section {
-    background-color: var(--verde-oscuro-fondo); /* Vuelve al fondo principal */
-    border-bottom: none;
+  background-color: var(--color-fondo-principal);
+  padding: 20px;
+  text-align: center;
+}
+.tipo-container {
+  display: flex;
+}
+.tipo-burger {
+  border-radius: 10%;
+}
+.burger-hero {
+  border-radius: 5%;
+}
+.burger-principalr {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-top: 2rem;
 }
 
-.title-burguer {
-    color: var(--verde-brillante); /* Título verde brillante */
-    font-family: "Gotham-Ultra", sans-serif;
+.burger-principalr h2 {
+  font-size: 5rem;
+  color: #fff; /* BURGER Blanco */
+  position: relative;
+  z-index: 2;
+  line-height: 0.9;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 5px;
 }
 
-/* Precio */
+.burger-negro {
+  color: var(--color-acento-texto); /* ¡Actualizado! CLASICA Negro */
+  display: block;
+  font-size: 3.5rem;
+  margin-top: -15px;
+  font-family: "Mettars", sans-serif;
+  position: absolute; /* Para superponerlo */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 75px; /* Ajuste manual para que esté debajo de BURGER */
+  z-index: 1;
+}
+
+/* El h2 debe ser posicionado y tener el espacio para que 'Clasica' entre */
+.burger-principalr h2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Contenedor de Imagen y Precio */
 .burger-price {
-    background-color: var(--negro);
-    color: var(--verde-brillante);
-    border: 3px solid var(--verde-brillante);
-    font-family: "Gotham-Ultra", sans-serif;
+  color: #fff;
+  font-family: "Anton", sans-serif;
 }
 
-/* Botones tipo hamburguesa */
-.tipo-burger button {
-    background-color: var(--verde-brillante);
-    color: var(--negro);
-    font-family: "Gotham-Medium", sans-serif;
+/* Tipos de Burger (Carne, Pollo, Vegan) */
+.tipo-burger h3 {
+  color: #fff; /* Nombres de tipo de burger blancos */
 }
 
-.tipo-burger button:hover {
-    background-color: var(--verde-barra);
+/* ------------------------------------
+/* 5. Estilos de Secciones de Extras (Toppings, Guarniciones, Bebidas)
+/* ------------------------------------ */
+
+section {
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(
+    color-fondo-principal
+  ); /* ¡Actualizado! Fondo de secciones oscuro */
 }
 
-
-/* ================= TÍTULOS DE SECCIÓN (Toppins, Guarniciones, Bebidas) ================= */
-
-/* Ajustes de Título (Fondo Verde Oscuro y Texto Blanco) */
-.tit h2 {
-    color: var(--blanco);
-    font-family: "Gotham-Ultra", sans-serif;
+/* Primera sección (Toppings) no necesita color de fondo si la sección de arriba ya lo da */
+.burger-section + section {
+  background-color: var(--color-fondo-oscuro);
+}
+.tipo-container {
+  display: flex; /* ¡CORREGIDO! Alineación horizontal */
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
 }
 
-.colour {
-    background-color: var(--verde-barra); /* Barra de color verde medio */
+.col-5.colour {
+  background-color: #fff;
+  width: 30%;
+  max-height: 100px;
+  border-radius: 0 10px 10px 0;
 }
 
-/* Precio en la barra */
-.col-2 h3 {
-    color: var(--blanco);
-    font-family: "Gotham-Medium", sans-serif;
+.col-5 h2 {
+  text-align: end;
+  margin-right: 15px;
 }
 
-/* TÍTULOS SUPERPUESTOS (Extras) */
+.extras {
+  padding: 0;
+}
+
+.col-5.colour h2 {
+  color: var(--color-fondo-principal); /* Título Principal Negro */
+}
+
+/* Texto superpuesto "Extras" */
 .titulo-superpuesto {
-    color: var(--negro); /* Mettars en negro sobre la barra verde */
-    font-family: 'mettars';
+  color: var(--color-acento-texto); /* ¡Actualizado! Texto superpuesto Negro */
+  opacity: 1; /* Para que sea completamente negro y visible */
+  font-family: "Mettars", sans-serif;
+  z-index: 1; /* Asegura que esté bajo el título principal */
+  top: 5px; /* Ajusta la posición vertical */
+}
+.col-5.colour {
+  padding-top: 20px; /* Para que el título quepa debajo del superpuesto */
 }
 
-
-/* Texto MENÚ Rotado */
-.menu-rotado {
-    color: var(--verde-barra); /* Mettars verde medio */
-    font-family: 'mettars';
+.col-2 h3 {
+  color: #fff; /* Precio del topping en blanco */
 }
 
-/* ================= LISTAS DE OPCIONES ================= */
+/* Contenedores de Opciones (El Recuadro que contiene los checkboxes) */
+.container-general-toppings,
+.container-guarniciones ul,
+.container-general-bebidas {
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
 
+label {
+  /* El texto de las opciones debe ser negro en fondo blanco */
+  color: #fff;
+  padding-right: 10px;
+}
+
+.container-guarniciones label span,
+.container-bebidas label span {
+  /* Precios en el recuadro blanco serán el color del fondo oscuro */
+  color: var(--);
+  font-family: "Gotham-Bold", sans-serif;
+}
+
+/* ------------------------------------
+/* 7. Estilo de Bebidas
+/* ------------------------------------ */
 .container-bebidas h3 {
-    color: var(--verde-brillante); /* Títulos de subcategoría en verde brillante */
-    font-family: "Gotham-Ultra", sans-serif;
+  color: var(
+    --color-fondo-oscuro
+  ); /* Títulos de categorías de bebida en color oscuro */
+  border-bottom: 1px solid var(--color-fondo-oscuro);
+  font-family: "Gotham-Ultra", sans-serif;
 }
 
-/* Checkboxes y Radio Buttons */
-form input[type="radio"],
-form input[type="checkbox"] {
-    /* Fondo oscuro para los inputs */
-    background-color: var(--verde-oscuro-fondo);
-    border: 2px solid var(--verde-brillante); 
+/* ------------------------------------
+/* 8. Texto Vertical Superpuesto "MEJORES"
+/* ------------------------------------ */
+img[src*="mejoresresvertica"] {
+  position: absolute;
+  right: -100px; /* Posicionado a la derecha */
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  z-index: 0;
+  opacity: 1; /* Imagen opaca */
+  height: 500px;
+  pointer-events: none;
 }
 
-form input[type="checkbox"]:checked,
-form input[type="radio"]:checked {
-    background-color: var(--verde-brillante); 
-    border-color: var(--verde-brillante);
+/* ------------------------------------
+/* 9. Botón y Footer
+/* ------------------------------------ */
+.ver-el-pedido {
+  background-color: var(--color-fondo-oscuro); /* Fondo oscuro para el botón */
 }
 
+.ver-el-pedido button {
+  background-color: var(--color-fondo-principal); /* Botón Verde Brillante */
+  color: var(--color-acento-texto);
+}
 
-/* ================= FOOTER ================= */
 footer {
-    background-color: var(--verde-brillante); /* Footer verde brillante */
-    border-top: 2px solid var(--gris-borde);
-}
-
-footer h2 {
-    color: var(--negro); /* Título del footer en negro */
-    font-family: "Gotham-Ultra", sans-serif;
-}
-
-.container-comments button {
-    background-color: var(--negro);
-    color: var(--verde-brillante);
+  background-color: var(--color-fondo-principal); /* Footer Verde Brillante */
+  color: var(--color-acento-texto);
 }
