@@ -1,439 +1,204 @@
-/* fonts */
-@font-face{
+/* --- Fuentes --- */
+@font-face {
     font-family: 'mettars';
     src: url(/paginaprincipal/fonts/Mettars.otf);
 }
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: url(/paginaprincipal/fonts/Gotham-Medium.otf);
+}
+@font-face {
+    font-family: 'Gotham-Ultra';
+    src: url(/paginaprincipal/fonts/Gotham-UltraItalic.otf);
+}
 
+/* ================= VARIABLES ================= */
+:root {
+    --verde-brillante: #00d084; /* Verde brillante (ej: precio, botones, logos en nav) */
+    --verde-oscuro-fondo: #002717; /* Un verde muy oscuro, casi negro, para el fondo principal */
+    --verde-barra: #009e66; /* El verde usado en las barras de título */
+    --blanco: #fff;
+    --negro: #000;
+    --gris-borde: #333333; 
+}
 
+/* ================= RESET & BASE ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: "Gotham-Medium", sans-serif;
 }
-
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fff;
-    color: #333;
+    background-color: var(--verde-oscuro-fondo); /* FONDO: Verde Oscuro */
+    color: var(--blanco); /* Texto principal blanco */
+    width: 100%;
+    max-width: 500px; /* Limita el ancho del cuerpo para centrar la estructura del diseño. */
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
-.logo {
-    width: 50px;
-}
-
-h1 {
-    color: #00c37c;
-}
-
-h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    margin-right: 20px
+/* ================= NAV Y HEADER ================= */
+header {
+    text-align: center;
+    background-color: var(--verde-oscuro-fondo); /* Fondo del header igual al body */
+    padding-bottom: 20px;
 }
 
 nav {
-    background-color: #00c37c;
+    background-color: var(--verde-brillante); /* Barra de navegación verde brillante */
     display: flex;
     justify-content: space-between;
-}
-
-/* esto es para los titulos */
-.grid-12 {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
     align-items: center;
-    gap: 10px;
-
+    padding: 10px 20px;
 }
 
-.colour {
-    background-color: #009e66;
-    height: 70px
-}
-
-.col-5 {
-    grid-column: span 5;
-    display: flex;
-    justify-content: end;
-    height: 50px
-}
-
-.col-2 {
-    grid-column: span 2;
-}
-
-
-/* Header */
-header {
-    text-align: center;
-}
-
-
-/* Secciones */
-section {
-    padding: 20px;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-/* seccion formulario */
-.container-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.g-recaptcha {
-    margin-left: 10px;
-    margin-top: 30px;
-}
-
-
-/* seccion tipo hamburguesa */
-.tipo-burger {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-/* seccion toppings */
-.container-general-toppings {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+h1 {
+    color: var(--verde-brillante);
+    font-family: "Gotham-Ultra", sans-serif;
+    text-transform: uppercase;
+    font-size: 32px;
     margin-top: 15px;
 }
 
-/* seccion guarniciones */
-.container-guarniciones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* ================= SECCIÓN FORMULARIO (FONDO BLANCO) ================= */
 
-/* seccion bebidas */
-.container-general-bebidas {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 15px;
-}
-
-.container-bebidas {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.container-item-bebidas {
-    display: flex;
-    justify-content: center;
-}
-
-/* seccion footer */
-.container-comments {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-
-/* Títulos de sección */
-section h2 {
-    font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-/* Formularios */
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-
-form input[type="celular"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-form input[type="text"] {
-    /* La regla general de width: 100% se va a sobrescribir
-       más abajo para la sección de cliente, pero se mantiene aquí */
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-form input[type="radio"],
-form input[type="checkbox"] {
-    margin-right: 6px;
-}
-
-/* Burger Design */
-.burger-img {
-    width: 100%;
-    height: 150px;
-    background-color: #555;
-    margin: 20px 0;
-}
-
-.tipo-burger button {
-    background-color: #00c37c;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    margin: 5px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.tipo-burger button:hover {
-    background-color: #009e66;
-}
-
-/* Listas y precios */
-ul {
-    list-style: none;
-}
-
-/* SACA LOS BORDES DE GUARNICIONES */
-.container-guarniciones ul li {
-    border: none;
-    /* Quita cualquier borde */
-    border-bottom: none;
-    /* En caso de que haya un borde inferior */
-    /* También puedes quitar padding o margin si hay espacios que parecen líneas */
-}
-
-ul li {
-    padding: 8px 0;
-    border-bottom: 2px solid #ddd;
-}
-
-/* Botones de imágenes */
-section div button {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ffffff;
-    margin: 10px;
-    cursor: pointer;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #00c37c;
-}
-
-footer button {
-    background-color: #000;
-    color: #000000;
-    padding: 14px 22px;
-    border: none;
-    border-radius: 14px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-footer button:hover {
-    background-color: #333;
-}
-
-/* Precios */
-h3 {
-    text-align: center;
-    font-size: 22px;
-    color: #000;
-    margin: 12px 0;
+.seccion-cliente {
+    background-color: var(--blanco); /* FONDO BLANCO para el formulario */
+    color: var(--negro); /* Texto negro en fondo blanco */
+    border-bottom: 2px solid var(--verde-brillante); /* Separador verde */
+    padding-bottom: 10px;
 }
 
 .titulo-form {
-    color: #000;
+    color: var(--negro); 
+    font-size: 24px;
 }
 
-/* para la burguer img */
+/* Etiquetas y Campos de Texto (Negro en fondo blanco) */
+.campos-texto label {
+    color: var(--negro);
+    font-weight: 800;
+}
 
-/* SECCIÓN BURGER */
+.campos-texto input[type="text"] {
+    background-color: #eee;
+    border: 1px solid var(--negro);
+}
+
+.opciones-entrega .radio-label {
+    color: var(--negro);
+    font-weight: 800;
+}
+
+/* Radio Button Cuadrado Negro */
+.opciones-entrega input[type="radio"] {
+    border: 1px solid var(--negro);
+    background-color: var(--blanco);
+}
+
+.opciones-entrega input[type="radio"]:checked {
+    background-color: var(--negro); 
+}
+
+
+/* ================= SECCIÓN BURGER ================= */
 .burger-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px 0;
-}
-
-.burger-container {
-    position: relative;
-    width: 360px;
-    /* Cambiá este valor para agrandar o achicar */
-    height: 240px;
-    z-index: -1;
-}
-
-.burger-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Precio superpuesto */
-/* Fondo de líneas verdes para el precio de la hamburguesa */
-.burger-price {
-    position: absolute;
-    top: 100%;
-    right: 39%;
-    background-color: #00c37c;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 18px;
-    z-index: 3;
-}
-
-/* Botones tipo hamburguesa */
-.tipo-burger {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    background-color: var(--verde-oscuro-fondo); /* Vuelve al fondo principal */
+    border-bottom: none;
 }
 
 .title-burguer {
-    color: #00c37c;
+    color: var(--verde-brillante); /* Título verde brillante */
+    font-family: "Gotham-Ultra", sans-serif;
 }
 
+/* Precio */
+.burger-price {
+    background-color: var(--negro);
+    color: var(--verde-brillante);
+    border: 3px solid var(--verde-brillante);
+    font-family: "Gotham-Ultra", sans-serif;
+}
+
+/* Botones tipo hamburguesa */
 .tipo-burger button {
-    background-color: #00c37c;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    background-color: var(--verde-brillante);
+    color: var(--negro);
+    font-family: "Gotham-Medium", sans-serif;
 }
 
 .tipo-burger button:hover {
-    background-color: #009e66;
+    background-color: var(--verde-barra);
 }
 
-.bg_lineas {
-    position: absolute;
-    z-index: 0;
-    height: 30px;
-    top: 250px;
-    right: 60px;
-    left: 40px;
+
+/* ================= TÍTULOS DE SECCIÓN (Toppins, Guarniciones, Bebidas) ================= */
+
+/* Ajustes de Título (Fondo Verde Oscuro y Texto Blanco) */
+.tit h2 {
+    color: var(--blanco);
+    font-family: "Gotham-Ultra", sans-serif;
 }
 
-.tit {
-    position: relative;
-    z-index: 1;
-    color: white;
+.colour {
+    background-color: var(--verde-barra); /* Barra de color verde medio */
 }
 
+/* Precio en la barra */
+.col-2 h3 {
+    color: var(--blanco);
+    font-family: "Gotham-Medium", sans-serif;
+}
+
+/* TÍTULOS SUPERPUESTOS (Extras) */
 .titulo-superpuesto {
-    position: absolute;
-    color: #000;
-    z-index: 2;
-    font-size: 25px;
-    top: 20px;
+    color: var(--negro); /* Mettars en negro sobre la barra verde */
     font-family: 'mettars';
 }
 
 
-/* --- MODIFICACIONES PARA DATOS DEL CLIENTE (COMO EN LA IMAGEN) --- */
-
-/* Estilo del título para que sea solo negro */
-.titulo-form {
-    color: black; 
+/* Texto MENÚ Rotado */
+.menu-rotado {
+    color: var(--verde-barra); /* Mettars verde medio */
+    font-family: 'mettars';
 }
 
-/* Contenedor del formulario. Afecta al flex, pero alinearemos los hijos. */
-.form-pos {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    width: 100%;
-    max-width: 400px; 
+/* ================= LISTAS DE OPCIONES ================= */
+
+.container-bebidas h3 {
+    color: var(--verde-brillante); /* Títulos de subcategoría en verde brillante */
+    font-family: "Gotham-Ultra", sans-serif;
 }
 
-/* Contenedor de los campos de texto (label e input) */
-.campos-texto {
-    width: 100%;
+/* Checkboxes y Radio Buttons */
+form input[type="radio"],
+form input[type="checkbox"] {
+    /* Fondo oscuro para los inputs */
+    background-color: var(--verde-oscuro-fondo);
+    border: 2px solid var(--verde-brillante); 
 }
 
-/* Estilo de la pareja label e input */
-.campos-texto label {
-    display: inline-block; 
-    width: 35%; 
-    text-align: right;
-    margin-right: 10px;
-    font-weight: bold;
-    margin-bottom: 12px; 
+form input[type="checkbox"]:checked,
+form input[type="radio"]:checked {
+    background-color: var(--verde-brillante); 
+    border-color: var(--verde-brillante);
 }
 
-.campos-texto input[type="text"] {
-    display: inline-block;
-    width: 60%; 
-    padding: 4px 8px; 
-    margin-bottom: 12px;
-    height: 25px; 
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    vertical-align: top; 
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: var(--verde-brillante); /* Footer verde brillante */
+    border-top: 2px solid var(--gris-borde);
 }
 
-/* Contenedor de las opciones de Retirar/Domicilio */
-.opciones-entrega {
-    width: 100%;
-    max-width: 375px; 
-    display: flex;
-    justify-content: flex-end; 
-    gap: 30px; 
-    margin-top: 5px;
+footer h2 {
+    color: var(--negro); /* Título del footer en negro */
+    font-family: "Gotham-Ultra", sans-serif;
 }
 
-.opciones-entrega .radio-label {
-    display: inline-block; 
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-/* Para simular el cuadrado negro en el radio button */
-.opciones-entrega input[type="radio"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    border: 1px solid black;
-    border-radius: 0; /* Lo hacemos cuadrado */
-    background-color: white;
-    margin-right: 5px;
-    cursor: pointer;
-    vertical-align: middle;
-}
-
-.opciones-entrega input[type="radio"]:checked {
-    background-color: black; /* Rellena de negro si está seleccionado */
+.container-comments button {
+    background-color: var(--negro);
+    color: var(--verde-brillante);
 }

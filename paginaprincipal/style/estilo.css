@@ -1,343 +1,383 @@
-/* ================= RESET & BASE ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Gotham-Medium", sans-serif;
-}
-
-body {
-  background-color: #000;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-:root {
-  --verde: #00d084;
-  --negro: #000;
-  --blanco: #fff;
-}
-
-/* ================= HEADER ================= */
-header {
-  background-color: var(--verde);
-  height: 80px;
-  width: 100%;
-  position: relative;
-  z-index: 100;
-}
-
-nav {
-  max-width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.nav-item {
-  color: var(--negro);
-  font-weight: 800;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.nav-logo img {
-  height: 45px;
-  display: block;
-}
-
-.nav-btn {
-  background-color: var(--negro);
-  color: var(--verde);
-  padding: 8px 15px;
-  border-radius: 4px;
-  font-weight: 800;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-/* ================= HERO SECTION (Base Escritorio) ================= */
-/* ================= HERO SECTION (Escritorio) ================= */
-.hero-section {
-  position: relative;
-  background: linear-gradient(to bottom, var(--verde) 40%, var(--negro) 100%);
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centrar verticalmente */
-  align-items: center; /* Centrar horizontalmente */
-  overflow: hidden;
-  padding-top: 80px; /* Espacio para el header */
-}
-
-.hero-content {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-/* TEXTO: MAXIMO 2 LINEAS */
-.hero-title {
-  font-family: "Gotham-Ultra", sans-serif;
-  font-weight: 900;
-  color: var(--blanco);
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 0.85; /* Líneas bien pegadas */
-  letter-spacing: -2px; /* Letras apretadas */
-  position: relative;
-  z-index: 1; /* Debajo de la hamburguesa para el efecto de superposición */
-
-  /* EN ESCRITORIO: Tamaño fijo grande */
-  font-size: 5.5rem;
-  margin-bottom: -60px; /* Valor negativo para que la hamburguesa suba */
-}
-
-/* CONTENEDOR DE LA IMAGEN */
-.hero-image-container {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 2; /* Encima del texto */
-}
-
-.hero-image {
-  /* Estas propiedades se sobrescribirán en móvil */
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* DEGRADADO NEGRO (PISO) */
-.hero-gradient-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40%; /* Altura del degradado */
-  background: linear-gradient(to top, var(--negro) 10%, transparent 100%);
-  z-index: 3;
-}
-
-/* ================= TENTARTE SECTION ================= */
-.tentarte-section {
-  background-color: var(--negro);
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.tentarte-header h2 {
-  font-family: "Gotham-Ultra", sans-serif;
-  font-weight: 900;
-  font-size: 2rem;
-  color: var(--blanco);
-  text-transform: uppercase;
-  margin-bottom: 40px;
-  position: relative;
-  display: inline-block;
-}
-
-/* Contenedor relativo para el "HOY" */
-.hoy-container {
-  position: relative;
-  white-space: nowrap;
-}
-
-/* El texto verde script */
-.hoy-verde {
-  font-family: "Mettars", cursive;
-  position: absolute;
-  top: -25px; /* Ajuste vertical */
-  right: -10px; /* Ajuste horizontal */
-  font-size: 4rem;
-  color: var(--verde);
-  transform: rotate(-5deg);
-  pointer-events: none;
-  text-shadow: 2px 2px 0px #000; /* Borde negro para legibilidad */
-}
-
-/* GRID */
-.products-grid {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.product-card {
-  background: #111;
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-}
-.product-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.main-burger-card {
-  grid-column: span 2;
-  aspect-ratio: 2/1; /* Rectangular */
-}
-.products-grid > .product-card:not(.main-burger-card) {
-  aspect-ratio: 1/1; /* Cuadrado */
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background-image: url("../imgs/mejoresinicio.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 40px 20px;
-  position: relative;
-}
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 150, 96, 0.9);
-  z-index: 1;
-}
-
-.footer-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-col {
-  flex: 1;
-  text-align: center;
-}
-.footer-col p {
-  color: var(--negro);
-  font-weight: 800;
-  font-size: 14px;
-}
-.footer-col.logo img {
-  height: 50px;
-}
-.socials span {
-  color: var(--negro);
-  font-size: 20px;
-  margin: 0 5px;
-}
-
-/* ============================================================ */
-/* =================== MEDIA QUERIES (MÓVIL) ================== */
-/* ============================================================ */
-
-@media (max-width: 768px) {
-  /* 1. HEADER FIJO Y SIMÉTRICO */
-  header {
-    position: fixed;
-    top: 0;
-    height: 60px;
-  }
-  .nav-item,
-  .nav-btn {
-    font-size: 10px;
-    padding: 5px 10px;
-  }
-  .nav-logo img {
-    height: 35px;
-  }
-
-  /* 2. HERO MÓVIL - SIMETRÍA PERFECTA */
-  .hero-section {
-    padding-top: 60px; /* Ajuste para el header fijo de 60px */
-    justify-content: flex-start;
-    height: auto;
-    min-height: auto;
-    padding-bottom: 0;
-  }
-
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
+    /* ================= RESET & BASE ================= */
+    * {
+    margin: 0;
     padding: 0;
-  }
+    box-sizing: border-box;
+    font-family: "Gotham-Medium", sans-serif;
+    }
 
-  /* TÍTULO COMPACTO Y GRUESO */
-  .hero-title {
+    body {
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    }
+
+    :root {
+    --verde: #00d084;
+    --negro: #000;
+    --blanco: #fff;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+    background-color: var(--verde);
+    height: 80px;
     width: 100%;
-    /* CORREGIDO: Aumentado el tamaño para 2 líneas en la mayoría de los móviles */
-    font-size: 15vw;
-    line-height: 0.85; /* Líneas más juntas */
-    /* CORREGIDO: Más solapamiento con la hamburguesa */
-    margin-bottom: -15vw;
+    position: relative;
+    z-index: 100;
+    }
+
+    nav {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    }
+
+    .nav-item {
+    color: var(--negro);
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    }
+
+    .nav-logo img {
+    height: 45px;
+    display: block;
+    }
+
+    .nav-btn {
+    background-color: var(--negro);
+    color: var(--verde);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    }
+
+    /* ================= HERO SECTION (Escritorio) ================= */
+    .hero-section {
+    position: relative;
+    background: linear-gradient(to bottom, var(--verde) 40%, var(--negro) 100%);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    overflow: hidden;
+    padding-top: 80px; /* Espacio para el header */
+    }
+
+    .hero-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    }
+
+    /* TEXTO GRANDE SOLAPADO (ESCRITORIO) */
+    .hero-title {
+    font-family: "Gotham-Ultra", sans-serif;
+    font-weight: 900;
+    color: var(--blanco);
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 0.8; 
+    letter-spacing: -2px; 
+    position: relative;
+    z-index: 1; 
+
+    display: block; 
+    font-size: 0; 
+    /* Aumentamos el solapamiento con la hamburguesa */
+    margin-bottom: -65px; 
+    overflow: hidden; 
+    width: 100%;
+    }
+
+    .hero-title-top {
+    display: block;
+    /* AJUSTE: 5vw para la línea superior (FANÁTICOS DE LAS) */
+        font-family: "Gotham-Ultra", sans-serif;
+
+    font-size: 7.05vw; 
+    line-height: 1.5; /* Líneas muy pegadas */
+    transform: translateX(0%); 
+    }
+
+    .hero-title-bottom {
+    display: block;
+    font-size: 8vw; 
+    line-height: 0.8;
+        font-family: "Gotham-Ultra", sans-serif;
+
+    /* Mover HAMBURGUESAS hacia arriba para solapar */
+    transform: translateY(-2vw) translateX(0%); 
+    }
+
+    /* CONTENEDOR DE LA IMAGEN */
+    .hero-image-container {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2; /* Encima del texto */
+    }
+
+    .hero-image {
+    width: 100%; 
+    height: auto;
+    display: block;
+    }
+
+    /* DEGRADADO NEGRO (PISO) */
+    .hero-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* Altura del degradado */
+    background: linear-gradient(to top, var(--negro) 10%, transparent 100%);
+    z-index: 3;
+    }
+
+    /* ================= TENTARTE SECTION ================= */
+    .tentarte-section {
+    background-color: var(--negro);
+    margin-top: 8 0px;
+    padding: 20px 20px;
+    text-align: center;
+    }
+
+    .tentarte-header h2 {
+    font-family: "Gotham-Ultra", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    }
+
+    /* Contenedor relativo para el "HOY" */
+    .hoy-container {
+    position: relative;
+    white-space: nowrap;
+    }
+
+    /* El texto verde script */
+    .hoy-verde {
+    font-family: "Mettars", cursive;
+    position: absolute;
+    top: 10px; /* Ajuste vertical */
+    right: -10px; /* Ajuste horizontal */
+    font-size: 3rem;
+    color: var(--verde);
+    transform: rotate(-5deg);
+    pointer-events: none;
+    text-shadow: 2px 2px 0px #000; /* Borde negro para legibilidad */
+    }
+
+    /* GRID */
+    .products-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    }
+
+    .product-card {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    }
+    .product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    }
+
+    .main-burger-card {
+    grid-column: span 2;
+    aspect-ratio: 2/1; /* Rectangular */
+    }
+    .products-grid > .product-card:not(.main-burger-card) {
+    aspect-ratio: 1/1; /* Cuadrado */
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+    background-image: url("../imgs/mejoresinicio.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 40px 20px;
+    position: relative;
+    }
+    footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 150, 96, 0.9);
+    z-index: 1;
+    }
+
+    .footer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .footer-col {
+    flex: 1;
+    text-align: center;
+    }
+    .footer-col p {
+    color: var(--negro);
+    font-weight: 800;
+    font-size: 14px;
+    }
+    .footer-col.logo img {
+    height: 50px;
+    }
+    .socials span {
+    color: var(--negro);
+    font-size: 20px;
+    margin: 0 5px;
+    }
+
+    /* ============================================================ */
+    /* =================== MEDIA QUERIES (MÓVIL) ================== */
+    /* ============================================================ */
+
+    @media (max-width: 768px) {
+    /* 1. HEADER FIJO Y SIMÉTRICO */
+    header {
+        position: fixed;
+        top: 0;
+        height: 60px;
+    }
+    .nav-item,
+    .nav-btn {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+    .nav-logo img {
+        height: 35px;
+    }
+
+    /* 2. HERO MÓVIL - SIMETRÍA PERFECTA */
+    .hero-section {
+        padding-top: 60px; /* Ajuste para el header fijo de 60px */
+        justify-content: flex-start;
+        height: auto;
+        min-height: auto;
+        padding-bottom: 0;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    /* TÍTULO COMPACTO Y GRUESO */
+.hero-title {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    /* Reducimos el tamaño para que quepa en 2 líneas */
+    font-size: 0; /* Desactivamos el tamaño del contenedor principal */
+    line-height: 0.85; 
+    margin-bottom: -6vw; /* Ajuste para solapamiento móvil */
     padding: 0 10px;
     letter-spacing: -1px;
   }
-
-  /* IMAGEN "EXPLOTADA" PERO CENTRADA */
-  .hero-image-container {
-    width: 100%;
-    margin-top: 0;
+  
+  /* FORZAMOS LAS DOS LÍNEAS Y AJUSTAMOS TAMAÑOS MÓVILES */
+  .hero-title-top {
+    display: block; /* Obliga a que sea una línea propia */
+    /* AJUSTE CLAVE: Tamaño para móvil que garantiza que "FANÁTICOS DE LAS" quepa */
+    font-size: 9vw; 
+    line-height: 0.9;
+    transform: none; 
   }
-
-  .hero-image {
-    /* CORREGIDO: Aumentado el ancho para que toque los bordes */
-    width: 120%;
-    max-width: none;
-    /* CORREGIDO: Centramos el exceso de 20% */
-    margin-left: -10%;
+  
+  .hero-title-bottom {
+    display: block; /* Obliga a la segunda línea */
+    /* AJUSTE CLAVE: Un poco más grande para mantener la jerarquía de escritorio */
+    font-size: 10vw; 
+    line-height: 0.9;
+    /* Ajuste vertical para solapar ligeramente */
+    transform: translateY(-1vw); 
   }
-
-  /* El degradado negro inferior (Floor) */
-  .hero-gradient-overlay {
-    height: 30%;
-  }
-
-  /* 3. TENTARTE MÓVIL */
-  .tentarte-section {
-    padding-top: 20px;
-  }
-
-  .tentarte-header h2 {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .hoy-verde {
-    font-size: 3rem;
-    top: -15px;
+    font-size: 2rem;
+    top: 10px; 
     right: -5px;
   }
 
-  /* 4. GRID MÓVIL (2 COLUMNAS) */
-  .products-grid {
-    gap: 10px;
-    padding: 0 10px;
-  }
+    /* IMAGEN "EXPLOTADA" PERO CENTRADA */
+    .hero-image-container {
+        width: 100%;
+        margin-top: 0;
+    }
 
-  .main-burger-card {
-    aspect-ratio: 16/9;
-  }
+    .hero-image {
+        width: 120%;
+        max-width: none;
+        margin-left: -10%;
+    }
 
-  /* 5. FOOTER MÓVIL */
-  .footer-content {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
+    /* El degradado negro inferior (Floor) */
+    .hero-gradient-overlay {
+        height: 30%;
+    }
+
+    /* 3. TENTARTE MÓVIL */
+    .tentarte-section {
+        padding-top: 20px;
+    }
+
+    .tentarte-header h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+    /* 4. GRID MÓVIL (2 COLUMNAS) */
+    .products-grid {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .main-burger-card {
+        aspect-ratio: 16/9;
+    }
+
+    /* 5. FOOTER MÓVIL */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    }
