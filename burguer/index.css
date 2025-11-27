@@ -1,72 +1,107 @@
 /* ------------------------------------
+
 /* 1. Reset Básico y Estilos Generales
+
 /* ------------------------------------ */
+
 * {
   box-sizing: border-box;
+
   margin: 0;
+
   padding: 0;
+
   font-family: "Gotham-Medium", sans-serif;
+
   color: #fff; /* Color de texto por defecto (usado en fondos oscuros) */
 }
 
 /* Tipografía y Colores Definidos */
+
 :root {
   --color-fondo-principal: #02bb70; /* ¡Actualizado! El color verde brillante (#02bb70) ahora es el fondo del body */
+
   --color-acento-texto: #000; /* Negro para texto en fondos claros */
+
   --color-gris-claro: #d1b1a7;
 }
 
 body {
   background-color: var(--color-fondo-principal);
+
   min-height: 100vh;
 }
 
 h1 {
   font-size: 2.5rem;
+
   text-align: center;
+
   padding: 1rem 0;
+
   color: var(--color-acento-texto);
+
   font-family: "Anton", sans-serif;
+
   text-transform: uppercase;
+
   letter-spacing: 2px;
 }
 
 h2 {
   font-size: 2rem;
+
   font-weight: bold;
+
   text-transform: uppercase;
+
   line-height: 1;
+
   font-family: "Gotham-Bold", sans-serif;
 }
 
 h3 {
   font-size: 1.2rem;
+
   font-weight: 700;
+
   text-transform: uppercase;
+
   font-family: "Gotham-Bold", sans-serif;
+
   color: #fff; /* Por defecto blanco, cambiará en el formulario */
 }
 
 label,
 input[type="text"] {
   font-family: "Gotham-Medium", sans-serif;
+
   color: #fff; /* Por defecto blanco */
 }
 
 /* ------------------------------------
+
 /* 2. Header y Navegación
+
 /* ------------------------------------ */
+
 header {
   background-color: #fff; /* Fondo del header blanco */
+
   padding-bottom: 1rem;
+
   color: var(--color-acento-texto);
 }
 
 nav {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   padding: 10px 20px 0;
+
   background-color: var(--color-fondo-principal); /* La banda verde superior */
 }
 
@@ -75,23 +110,40 @@ nav {
 }
 
 /* ------------------------------------
+
 /* 3. Sección de Datos del Cliente (Fondo Blanco)
+
 /* ------------------------------------ */
+
 .seccion-cliente {
   background-color: #fff; /* ¡Actualizado! Fondo del formulario blanco */
+
   padding: 1rem 20px;
+}
+
+.container-form {
+  display: flex;
+
+  justify-content: center;
+
+  text-align: end;
 }
 
 .titulo-form {
   color: var(--color-acento-texto);
+
   font-size: 1.5rem;
+
   margin-bottom: 1rem;
+
   font-family: "Gotham-Bold", sans-serif;
+
   text-align: center;
 }
 
 .campos-texto {
   /* Ajuste para que los labels y inputs usen texto negro */
+
   color: var(--color-acento-texto);
 }
 
@@ -101,7 +153,9 @@ nav {
 
 .campos-texto input[type="text"] {
   background-color: #fff;
+
   border: 1px solid #ccc;
+
   color: var(--color-acento-texto);
 }
 
@@ -110,101 +164,158 @@ nav {
 }
 
 /* ------------------------------------
+
 /* 4. Sección de la Burger Principal (Fondo Principal Verde)
+
 /* ------------------------------------ */
+
 .burger-section {
   background-color: var(--color-fondo-principal);
+
   padding: 20px;
+
   text-align: center;
 }
+
 .tipo-container {
   display: flex;
 }
+
 .tipo-burger {
   border-radius: 10%;
 }
+
 .burger-hero {
   border-radius: 5%;
 }
+
 .burger-principalr {
   margin-bottom: 1.5rem;
+
   position: relative;
+
   padding-top: 2rem;
 }
 
 .burger-principalr h2 {
   font-size: 5rem;
+
   color: #fff; /* BURGER Blanco */
+
   position: relative;
+
   z-index: 2;
+
   line-height: 0.9;
+
   font-family: "Anton", sans-serif;
+
   letter-spacing: 5px;
 }
 
 .burger-negro {
   color: var(--color-acento-texto); /* ¡Actualizado! CLASICA Negro */
+
   display: block;
+
   font-size: 3.5rem;
+
   margin-top: -15px;
+
   font-family: "Mettars", sans-serif;
+
   position: absolute; /* Para superponerlo */
-  left: 50%;
+
+  left: 55%;
+
   transform: translateX(-50%);
-  top: 75px; /* Ajuste manual para que esté debajo de BURGER */
+
+  top: 60px; /* Ajuste manual para que esté debajo de BURGER */
+
   z-index: 1;
 }
 
 /* El h2 debe ser posicionado y tener el espacio para que 'Clasica' entre */
+
 .burger-principalr h2 {
   position: relative;
+
   z-index: 2;
 }
 
 /* Contenedor de Imagen y Precio */
+
 .burger-price {
   color: #fff;
+
   font-family: "Anton", sans-serif;
 }
 
 /* Tipos de Burger (Carne, Pollo, Vegan) */
+
 .tipo-burger h3 {
   color: #fff; /* Nombres de tipo de burger blancos */
 }
 
 /* ------------------------------------
+
 /* 5. Estilos de Secciones de Extras (Toppings, Guarniciones, Bebidas)
+
 /* ------------------------------------ */
 
 section {
   padding: 20px;
+
   position: relative;
+
   overflow: hidden;
-  background-color: var(
-    color-fondo-principal
-  ); /* ¡Actualizado! Fondo de secciones oscuro */
 }
 
 /* Primera sección (Toppings) no necesita color de fondo si la sección de arriba ya lo da */
-.burger-section + section {
-  background-color: var(--color-fondo-oscuro);
-}
+
 .tipo-container {
-  display: flex; /* ¡CORREGIDO! Alineación horizontal */
+  /* display: flex; ¡CORREGIDO! Alineación horizontal */
+
   justify-content: center;
+
   gap: 20px;
+
   margin-top: 2rem;
+}
+
+.col-2 h3 {
+  background-color: red;
+  display: block;
+}
+.col-5 h2 {
+  font-family: "Gotham-Ultra";
+}
+.grid-12 {
+  display: flex;
+  width: 100%;
+  position: relative; /* CLAVE para que 'Extras' se posicione dentro */
+  height: 60px; /* Altura para el bloque de color y el precio */
+  margin-bottom: 20px;
+}
+.extras {
+  display: flex;
 }
 
 .col-5.colour {
   background-color: #fff;
-  width: 30%;
-  max-height: 100px;
+
+  align-items: center;
+  justify-content: flex-end; /* Alinear 'Toppins' a la derecha */
+  width: 30%; /* 5/12 */
+  height: 85px;
   border-radius: 0 10px 10px 0;
+  position: relative;
+  z-index: 2;
 }
 
 .col-5 h2 {
   text-align: end;
+
   margin-right: 15px;
 }
 
@@ -217,82 +328,115 @@ section {
 }
 
 /* Texto superpuesto "Extras" */
+
 .titulo-superpuesto {
-  color: var(--color-acento-texto); /* ¡Actualizado! Texto superpuesto Negro */
-  opacity: 1; /* Para que sea completamente negro y visible */
+  color: var(--color-acento-texto); /* Negro */
+  display: block;
+  font-size: 3rem;
   font-family: "Mettars", sans-serif;
-  z-index: 1; /* Asegura que esté bajo el título principal */
-  top: 5px; /* Ajusta la posición vertical */
+  position: absolute;
+  top: 60%;
+  right: 2%;
+  z-index: 3; /* Siempre encima */
+  white-space: nowrap; /* Evita que se rompa */
 }
+
 .col-5.colour {
   padding-top: 20px; /* Para que el título quepa debajo del superpuesto */
 }
 
 .col-2 h3 {
   color: #fff; /* Precio del topping en blanco */
+  font-family: "Gotham-Ultra";
 }
 
 /* Contenedores de Opciones (El Recuadro que contiene los checkboxes) */
+
 .container-general-toppings,
 .container-guarniciones ul,
 .container-general-bebidas {
   padding: 15px;
+
   border-radius: 5px;
+
   max-width: 600px;
+
   margin: 0 auto 20px;
 }
 
 label {
   /* El texto de las opciones debe ser negro en fondo blanco */
+
   color: #fff;
+
   padding-right: 10px;
 }
 
 .container-guarniciones label span,
 .container-bebidas label span {
   /* Precios en el recuadro blanco serán el color del fondo oscuro */
+
   color: var(--);
+
   font-family: "Gotham-Bold", sans-serif;
 }
 
 /* ------------------------------------
+
 /* 7. Estilo de Bebidas
+
 /* ------------------------------------ */
+
 .container-bebidas h3 {
   color: var(
     --color-fondo-oscuro
   ); /* Títulos de categorías de bebida en color oscuro */
+
   border-bottom: 1px solid var(--color-fondo-oscuro);
+
   font-family: "Gotham-Ultra", sans-serif;
 }
 
 /* ------------------------------------
+
 /* 8. Texto Vertical Superpuesto "MEJORES"
+
 /* ------------------------------------ */
+
 img[src*="mejoresresvertica"] {
   position: absolute;
-  right: -100px; /* Posicionado a la derecha */
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
+
+  right: 1px; /* Posicionado a la derecha */
+
+  top: 150%;
+
   z-index: 0;
+
   opacity: 1; /* Imagen opaca */
-  height: 500px;
+
+  height: 600px;
+
   pointer-events: none;
 }
 
 /* ------------------------------------
+
 /* 9. Botón y Footer
+
 /* ------------------------------------ */
+
 .ver-el-pedido {
   background-color: var(--color-fondo-oscuro); /* Fondo oscuro para el botón */
 }
 
 .ver-el-pedido button {
   background-color: var(--color-fondo-principal); /* Botón Verde Brillante */
+
   color: var(--color-acento-texto);
 }
 
 footer {
   background-color: var(--color-fondo-principal); /* Footer Verde Brillante */
+
   color: var(--color-acento-texto);
 }
