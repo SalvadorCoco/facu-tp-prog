@@ -60,17 +60,22 @@
     }
 
     /* ================= HERO SECTION (Escritorio) ================= */
-    .hero-section {
-    position: relative;
-    background: linear-gradient(to bottom, var(--verde) 40%, var(--negro) 100%);
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    overflow: hidden;
-    padding-top: 80px; /* Espacio para el header */
-    }
+ .hero-section {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    var(--verde) 0%,
+    var(--verde) 55%,
+    var(--negro) 100%
+  );
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px;
+}
 
     .hero-content {
     width: 100%;
@@ -84,7 +89,7 @@
 
     /* TEXTO GRANDE SOLAPADO (ESCRITORIO) */
     .hero-title {
-    font-family: "Gotham-Ultra", sans-serif;
+    font-family: "Anton-Regular", sans-serif;
     font-weight: 900;
     color: var(--blanco);
     text-transform: uppercase;
@@ -97,7 +102,6 @@
     display: block; 
     font-size: 0; 
     /* Aumentamos el solapamiento con la hamburguesa */
-    margin-bottom: -65px; 
     overflow: hidden; 
     width: 100%;
     }
@@ -105,22 +109,22 @@
     .hero-title-top {
     display: block;
     /* AJUSTE: 5vw para la línea superior (FANÁTICOS DE LAS) */
-        font-family: "Gotham-Ultra", sans-serif;
+     font-family: "Anton-Regular", sans-serif;
 
-    font-size: 7.05vw; 
+    font-size: 5.5vw; 
     line-height: 1.5; /* Líneas muy pegadas */
-    transform: translateX(0%); 
     }
 
     .hero-title-bottom {
     display: block;
-    font-size: 8vw; 
+    font-size: 6vw; 
     line-height: 0.8;
-        font-family: "Gotham-Ultra", sans-serif;
+    font-family: "Anton-Regular", sans-serif;
 
     /* Mover HAMBURGUESAS hacia arriba para solapar */
     transform: translateY(-2vw) translateX(0%); 
     }
+
 
     /* CONTENEDOR DE LA IMAGEN */
     .hero-image-container {
@@ -342,7 +346,6 @@
     .hero-image {
         width: 120%;
         max-width: none;
-        margin-left: -10%;
     }
 
     /* El degradado negro inferior (Floor) */
